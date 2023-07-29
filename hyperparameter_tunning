@@ -1,0 +1,18 @@
+from sklearn.model_selection import GridSearchCV
+#///////////////////////////////////////////////////MAIN CODE FOR HYPERTUNNING/////////////
+clf = GridSearchCV( DecisionTreeClassifier(),#>>>>>>>>>> mdoel jiski hypertunning karni hai
+{
+    'max_depth' : [1,2,3] #>>>>>>>>>>> parameter jin par hypertunning karni hai
+},
+  
+  cv=5 #>>>>>>>>>>>>>>> no of cross folds
+      )
+#////////////////////////////////////////////////////////////////
+clf.fit(X_test, y_test) 
+clf.cv_results_
+#::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+df2 = pd.DataFrame(clf.cv_results_)
+df2
+dir(clf)
+clf.best_params_ # it wiil find best paramater
+clf.best_score_ # it will find best score
