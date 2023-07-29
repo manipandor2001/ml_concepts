@@ -1,0 +1,9 @@
+from sklearn.model_selection import cross_val_score  # --->>> iss method se cross validation hota hai
+cross_valid = cross_val_score(mytree,X_test,y_test,cv=5) # -- method maine apne parameter load karte hai  
+                                                        # model --- jis par cross folding kare ge
+                                                        # x_train and y_train ---  data x and y ka
+                                                        #cv--- no of jitni baar cross folding hogi
+  
+#::::::::::::::::::::::::::::::cross folding is done:::::::::::::::::::::::::::::::::::::::::::::::::::::
+cross_valid # ye hame accuracy score batye ga ,     agar ham 5 baar cross foldiing karte hai to un sab se score
+#[ 1st , 2nd , 3rd , 4th , 5th]  <<<---- kuch iss tarah se
